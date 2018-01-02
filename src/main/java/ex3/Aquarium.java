@@ -7,10 +7,12 @@ package ex3;
  *
  */
 public class Aquarium extends ZoneZoo {
-	
-	@Override
-	public double calculerKgsNourritureParJour(){
-		return compterAnimaux() * 0.2;
+
+	/**
+	 * Constructeur de la zone.
+	 */
+	public Aquarium() {
+		super(0.2);
 	}
 
 	@Override

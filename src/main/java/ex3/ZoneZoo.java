@@ -14,7 +14,24 @@ public abstract class ZoneZoo {
 	/**
 	 * Liste des animaux dans la zone.
 	 */
-	private List<Animal> animaux = new ArrayList<>();
+	private List<Animal> animaux;
+
+	/**
+	 * Facteur multiplicateur pour le calcul de la nourriture consommée par les
+	 * animaux dans la zone.
+	 */
+	private double MultiplicateurNourriture;
+
+	/**
+	 * Constructeur de la zone.
+	 * 
+	 * @param multiplicateurNourriture
+	 *            pour le calcul de la nourriture consommée
+	 */
+	public ZoneZoo(double multiplicateurNourriture) {
+		animaux = new ArrayList<>();
+		this.MultiplicateurNourriture = multiplicateurNourriture;
+	}
 
 	/**
 	 * Ajoute un animal dans la zone.
@@ -50,7 +67,9 @@ public abstract class ZoneZoo {
 	 * 
 	 * @return la quantité de nourriture
 	 */
-	public abstract double calculerKgsNourritureParJour();
+	public double calculerKgsNourritureParJour() {
+		return animaux.size() * MultiplicateurNourriture;
+	}
 
 	/**
 	 * Détermine si un animal est recevable dans la zone.

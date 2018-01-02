@@ -8,9 +8,11 @@ package ex3;
  */
 public class SavaneAfricaine extends ZoneZoo {
 
-	@Override
-	public double calculerKgsNourritureParJour() {
-		return compterAnimaux() * 10;
+	/**
+	 * Constructeur de la zone.
+	 */
+	public SavaneAfricaine() {
+		super(10);
 	}
 
 	@Override
