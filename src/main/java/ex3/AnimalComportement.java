@@ -1,8 +1,14 @@
 package ex3;
 
+/**
+ * Enumération des comportements alimentaire possibles de l'animal.
+ * 
+ * @author hmerciol
+ *
+ */
 public enum AnimalComportement {
-	CARNIVORE("Carnivore"),HERBIVORE("Herbivore");
-	
+	CARNIVORE("Carnivore"), HERBIVORE("Herbivore");
+
 	private String value;
 
 	private AnimalComportement(String value) {

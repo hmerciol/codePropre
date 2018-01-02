@@ -1,10 +1,16 @@
 package ex3;
 
+/**
+ * Classe servant à faire tourner l'application de gestion du zoo.
+ * 
+ * @author DIGINAMIC
+ *
+ */
 public class ZooApplication {
 
 	public static void main(String[] args) {
 		Zoo zoo = new Zoo("Thoiry");
-		
+
 		zoo.addAnimal(new Animal("Gazelle", AnimalType.MAMMIFERE, AnimalComportement.HERBIVORE));
 		zoo.addAnimal(new Animal("Zèbre", AnimalType.MAMMIFERE, AnimalComportement.HERBIVORE));
 		zoo.addAnimal(new Animal("Lion", AnimalType.MAMMIFERE, AnimalComportement.HERBIVORE));
@@ -13,7 +19,7 @@ public class ZooApplication {
 		zoo.addAnimal(new Animal("Truite dorée", AnimalType.POISSON, AnimalComportement.HERBIVORE));
 		zoo.addAnimal(new Animal("Boa constrictor", AnimalType.REPTILE, AnimalComportement.CARNIVORE));
 		zoo.addAnimal(new Animal("Python", AnimalType.REPTILE, AnimalComportement.CARNIVORE));
-		
+
 		zoo.afficherListeAnimaux();
 	}
 
