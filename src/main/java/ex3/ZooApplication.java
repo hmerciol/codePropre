@@ -5,14 +5,16 @@ public class ZooApplication {
 	public static void main(String[] args) {
 		Zoo zoo = new Zoo("Thoiry");
 		
-		zoo.addAnimal("Gazelle", "MAMMIFERE", "HERBIVORE");
-		zoo.addAnimal("ZÃ¨bre", "MAMIFERE", "HERBIVORE");
-		zoo.addAnimal("Lion", "MAMMIFERE", "HERBIVORE");
-		zoo.addAnimal("PanthÃ¨re", "MAMMIFERE", "CARNIVORE");
-		zoo.addAnimal("Requin blanc", "POISSON", "HERBIVORE");
-		zoo.addAnimal("Truite dorÃ©e", "POISSON", "HERBIVORE");
-		zoo.addAnimal("Boa constrictor", "SERPENT", "CARNIVORE");
-		zoo.addAnimal("Python", "SERPENT", "CARNIVORE");
+		zoo.addAnimal(new Animal("Gazelle", AnimalType.MAMMIFERE, AnimalComportement.HERBIVORE));
+		zoo.addAnimal(new Animal("Zèbre", AnimalType.MAMMIFERE, AnimalComportement.HERBIVORE));
+		zoo.addAnimal(new Animal("Lion", AnimalType.MAMMIFERE, AnimalComportement.HERBIVORE));
+		zoo.addAnimal(new Animal("Panthère", AnimalType.MAMMIFERE, AnimalComportement.CARNIVORE));
+		zoo.addAnimal(new Animal("Requin blanc", AnimalType.POISSON, AnimalComportement.HERBIVORE));
+		zoo.addAnimal(new Animal("Truite dorée", AnimalType.POISSON, AnimalComportement.HERBIVORE));
+		zoo.addAnimal(new Animal("Boa constrictor", AnimalType.REPTILE, AnimalComportement.CARNIVORE));
+		zoo.addAnimal(new Animal("Python", AnimalType.REPTILE, AnimalComportement.CARNIVORE));
+		
+		zoo.afficherListeAnimaux();
 	}
 
 }
