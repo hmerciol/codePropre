@@ -1,26 +1,33 @@
 package ex2;
 
-/** Représente un compte bancaire de type compte courante (type=CC) ou livret A (type=LA)
+/**
+ * Représente un compte bancaire de type compte courante (type=CC) ou livret A
+ * (type=LA)
+ * 
  * @author DIGINAMIC
  */
-public class CompteBancaire {
+public abstract class CompteBancaire {
 
 	/** solde : solde du compte */
 	private double solde;
-	
-	/** decouvert : un découvert est autorisé seulement pour les comptes courants */
+
+	/**
+	 * decouvert : un découvert est autorisé seulement pour les comptes courants
+	 */
 	private double decouvert;
-	
-	/** tauxRemuneration : taux de rémunération dans le cas d'un livret A */
-	private double tauxRemuneration;
-	
+
 	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
 	private String type;
-	
+
 	/**
+	 * Constructeur du Compte Bancaire.
+	 * 
 	 * @param solde
+	 *            représente le solde du compte
 	 * @param decouvert
+	 *            représente le d�couvert autoris� pour le Compte Courant
 	 * @param type
+	 *            repr�sente le type du compte
 	 */
 	public CompteBancaire(String type, double solde, double decouvert) {
 		super();
@@ -28,95 +35,87 @@ public class CompteBancaire {
 		this.solde = solde;
 		this.decouvert = decouvert;
 	}
-	
-	/** Ajoute un montant au solde
+
+	/**
+	 * Ajoute un montant au solde
+	 * 
 	 * @param montant
+	 *            montant � ajouter
 	 */
-	public void ajouterMontant(double montant){
+	public void ajouterMontant(double montant) {
 		this.solde += montant;
 	}
-	
-	/** Ajoute un montant au solde
+
+	/**
+	 * D�bite un montant au solde
+	 * 
 	 * @param montant
+	 *            montant � d�biter
 	 */
-	public void debiterMontant(double montant){
-		if (type.equals("CC")){
-			if (this.solde - montant > decouvert){
-				this.solde = solde - montant;
-			}	
-		}
-		else if (type.equals("LA")){
-			if (this.solde - montant > 0){
-				this.solde = solde - montant;
-			}	
+	public void debiterMontant(double montant) {
+		if (this.solde - montant > decouvert) {
+			this.solde = solde - montant;
 		}
 	}
-	
-	public void appliquerRemuAnnuelle(){
-		if (type.equals("LA")){
-			this.solde = solde + solde*tauxRemuneration/100;
-		}
-	}
-	
-	/** Ce constructeur est utilisé pour créer un compte de type Livret A
-	 * @param type = LA
-	 * @param solde représente le solde du compte
-	 * @param decouvert  représente le découvert autorisé
-	 * @param tauxRemuneration  représente le taux de rémunération du livret A
+
+	/**
+	 * Applique la r�mun�ration annuelle (n'a d'effet qu'avec le type LivretA)
 	 */
-	public CompteBancaire(String type, double solde, double decouvert, double tauxRemuneration) {
-		super();
-		this.type = type;
-		this.solde = solde;
-		this.decouvert = decouvert;
-		this.tauxRemuneration = tauxRemuneration;
+	public void appliquerRemuAnnuelle() {
 	}
-	
-	/** Getter for solde
+
+	/**
+	 * Getter pour solde
+	 * 
 	 * @return the solde
 	 */
 	public double getSolde() {
 		return solde;
 	}
-	
-	/** Setter
-	 * @param solde the solde to set
+
+	/**
+	 * Setter
+	 * 
+	 * @param solde
+	 *            le nouveau solde
 	 */
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
-	/** Getter for decouvert
+
+	/**
+	 * Getter pour decouvert
+	 * 
 	 * @return the decouvert
 	 */
 	public double getDecouvert() {
 		return decouvert;
 	}
-	/** Setter
-	 * @param decouvert the decouvert to set
+
+	/**
+	 * Setter
+	 * 
+	 * @param decouvert
+	 *            le nouveau decouvert
 	 */
 	public void setDecouvert(double decouvert) {
 		this.decouvert = decouvert;
 	}
-	/** Getter for tauxRemuneration
-	 * @return the tauxRemuneration
-	 */
-	public double getTauxRemuneration() {
-		return tauxRemuneration;
-	}
-	/** Setter
-	 * @param tauxRemuneration the tauxRemuneration to set
-	 */
-	public void setTauxRemuneration(double tauxRemuneration) {
-		this.tauxRemuneration = tauxRemuneration;
-	}
-	/** Getter for type
+
+	/**
+	 * Getter pour type
+	 * 
 	 * @return the type
 	 */
 	public String getType() {
 		return type;
 	}
-	/** Setter
-	 * @param type the type to set
+
+	/**
+	 * Setter
+	 * 
+	 * @param type
+	 *            le nouveau type
 	 */
 	public void setType(String type) {
 		this.type = type;
