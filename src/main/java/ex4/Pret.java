@@ -2,15 +2,49 @@ package ex4;
 
 import java.util.Date;
 
+/**
+ * La classe représentant un prêt.
+ * 
+ * @author DIGINAMIC
+ *
+ */
 public class Pret {
 
+	/**
+	 * La stratégie du prêt.
+	 */
 	private Strategy strategy;
+	/**
+	 * Le capital corespondant au prêt.
+	 */
 	private double capital;
+	/**
+	 * Le capital restant dû.
+	 */
 	private double capitalRestantDu;
+	/**
+	 * Le taux d'intérêts du prêt.
+	 */
 	private double taux;
+	/**
+	 * La date de début du prêt.
+	 */
 	private Date dateDebut;
+	/**
+	 * La date de fin du prêt.
+	 */
 	private Date dateFin;
-	
+
+	/**
+	 * Constructeur de la classe Pret
+	 * 
+	 * @param capital
+	 *            le capital du prêt
+	 * @param taux
+	 *            le taux du prêt
+	 * @param dateDebut
+	 *            la date de début du prêt
+	 */
 	public Pret(double capital, double taux, Date dateDebut) {
 		super();
 		this.strategy = new PretATerme();
@@ -18,99 +52,155 @@ public class Pret {
 		this.taux = taux;
 		this.dateDebut = dateDebut;
 	}
-	
+
+	/**
+	 * Constructeur de la classe Pret
+	 * 
+	 * @param capital
+	 *            le capital du prêt
+	 * @param taux
+	 *            le taux du prêt
+	 * @param dateDebut
+	 *            la date de début du prêt
+	 * @param dateFin
+	 *            la date de fin du prêt
+	 */
 	public Pret(double capital, double taux, Date dateDebut, Date dateFin) {
 		this(capital, taux, dateDebut);
 		this.dateFin = dateFin;
 	}
-	
+
+	/**
+	 * Constructeur de la classe Pret
+	 * 
+	 * @param capital
+	 *            le capital du prêt
+	 * @param capitalRestantDu
+	 *            le capital restant dû
+	 * @param taux
+	 *            le taux du prêt
+	 * @param dateDebut
+	 *            la date de début du prêt
+	 * @param dateFin
+	 *            la date de fin du prêt
+	 */
 	public Pret(double capital, double capitalRestantDu, double taux, Date dateDebut, Date dateFin) {
 		this(capital, taux, dateDebut, dateFin);
 		this.capitalRestantDu = capitalRestantDu;
 	}
 
-	/** Getter for strategy
-	 * @return the strategy
+	/**
+	 * Récupère la strategie du prêt.
+	 * 
+	 * @return la strategie du prêt
 	 */
 	public Strategy getStrategy() {
 		return strategy;
 	}
 
-	/** Setter
-	 * @param strategy the strategy to set
+	/**
+	 * Etabli la strategie du prêt.
+	 * 
+	 * @param strategy
+	 *            la strategie du prêt
 	 */
 	public void setStrategy(Strategy strategy) {
 		this.strategy = strategy;
 	}
 
-	/** Getter for capital
-	 * @return the capital
+	/**
+	 * Récupère le capital du prêt.
+	 * 
+	 * @return le capital du prêt
 	 */
 	public double getCapital() {
 		return capital;
 	}
 
-	/** Setter
-	 * @param capital the capital to set
+	/**
+	 * Etabli le capital du prêt.
+	 * 
+	 * @param capital
+	 *            le capital du prêt
 	 */
 	public void setCapital(double capital) {
 		this.capital = capital;
 	}
 
-	/** Getter for capitalRestantDu
-	 * @return the capitalRestantDu
+	/**
+	 * Récupère le capital restant dû.
+	 * 
+	 * @return le capital restant dû
 	 */
 	public double getCapitalRestantDu() {
 		return capitalRestantDu;
 	}
 
-	/** Setter
-	 * @param capitalRestantDu the capitalRestantDu to set
+	/**
+	 * Etabli le capital restant dû.
+	 * 
+	 * @param capitalRestantDu
+	 *            le capital restant dû
 	 */
 	public void setCapitalRestantDu(double capitalRestantDu) {
 		this.capitalRestantDu = capitalRestantDu;
 	}
 
-	/** Getter for taux
-	 * @return the taux
+	/**
+	 * Récupère le taux du prêt.
+	 * 
+	 * @return le taux
 	 */
 	public double getTaux() {
 		return taux;
 	}
 
-	/** Setter
-	 * @param taux the taux to set
+	/**
+	 * Etabli le taux du prêt.
+	 * 
+	 * @param taux
+	 *            le taux
 	 */
 	public void setTaux(double taux) {
 		this.taux = taux;
 	}
 
-	/** Getter for dateDebut
-	 * @return the dateDebut
+	/**
+	 * Récupère la date de début du prêt.
+	 * 
+	 * @return la date de début du prêt
 	 */
 	public Date getDateDebut() {
 		return dateDebut;
 	}
 
-	/** Setter
-	 * @param dateDebut the dateDebut to set
+	/**
+	 * Etabli la date de début du prêt.
+	 * 
+	 * @param dateDebut
+	 *            la date de début du prêt
 	 */
 	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	/** Getter for dateFin
-	 * @return the dateFin
+	/**
+	 * Récupère la date de fin du prêt.
+	 * 
+	 * @return la date de fin du prêt
 	 */
 	public Date getDateFin() {
 		return dateFin;
 	}
 
-	/** Setter
-	 * @param dateFin the dateFin to set
+	/**
+	 * Etabli la date de fin du prêt.
+	 * 
+	 * @param dateFin
+	 *            la date de fin du prêt
 	 */
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
-	
+
 }
