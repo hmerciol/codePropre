@@ -3,6 +3,9 @@ package ex3;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Classe représentant les différentes zones du zoo.
  * 
@@ -10,6 +13,8 @@ import java.util.List;
  *
  */
 public abstract class ZoneZoo {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(ZoneZoo.class);
 
 	/**
 	 * Liste des animaux dans la zone.
@@ -48,7 +53,7 @@ public abstract class ZoneZoo {
 	 */
 	public void afficherListeAnimaux() {
 		for (Animal animal : animaux) {
-			System.out.println(animal.getNom());
+			LOG.info(animal.getNom());
 		}
 	}
 
