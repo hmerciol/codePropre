@@ -42,6 +42,9 @@ public class Zoo {
 	 *            animal à ajouter
 	 */
 	public void addAnimal(Animal animal) {
+		if(animal==null) {
+			return;
+		}
 		for (ZoneZoo zone : zonesZoo) {
 			if (zone.accepte(animal)) {
 				zone.addAnimal(animal);
@@ -57,6 +60,19 @@ public class Zoo {
 		for (ZoneZoo zone : zonesZoo) {
 			zone.afficherListeAnimaux();
 		}
+	}
+
+	/**
+	 * Compte les animaux dans le zoo.
+	 * 
+	 * @return le nombre d'animaux dans le zoo
+	 */
+	public int compterAnimaux() {
+		int compteur = 0;
+		for (ZoneZoo zone : zonesZoo) {
+			compteur += zone.compterAnimaux();
+		}
+		return compteur;
 	}
 
 	/**
@@ -76,5 +92,14 @@ public class Zoo {
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	/**
+	 * Récupère les zones du zoo
+	 * 
+	 * @return les zones du zoo
+	 */
+	public List<ZoneZoo> getZonesZoo() {
+		return zonesZoo;
 	}
 }
